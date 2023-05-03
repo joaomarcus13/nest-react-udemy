@@ -1,0 +1,71 @@
+@base=http://localhost:3000
+
+
+########### USER ##########################
+###  get user
+GET {{base}}/user
+
+###  get user by id
+GET {{base}}/user/1
+
+###  create user
+POST {{base}}/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"jms",
+    "phone":123123,
+    "email":"123@123",
+    "cpf":"123321123",
+    "password":"mfklgd"
+}
+##########################################
+
+
+######## ADDRESS #########################
+## create address
+POST {{base}}/address/1 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidHlwZVVzZXIiOjEsImlhdCI6MTY4MTM5MjQ1MiwiZXhwIjoxNjgxOTk3MjUyfQ.0ctSOR-J9Uj4XQq50Yu1_XfLlTUMfEss0SuJ3lR9gcc
+
+{
+     "complemento": "string",
+     "numberaddress": 12,
+     "cep": "string",
+     "cityId": 12
+}
+
+
+#########################################
+
+
+
+
+####### AUTH ############################
+
+POST {{base}}/auth HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"123@123",
+    "password":"mfklgd"
+}
+
+#########################################
+
+
+
+
+
+
+
+
+
+
+
+
+### get states
+GET {{base}}/state
+
+### get cities
+GET {{base}}/city/11
